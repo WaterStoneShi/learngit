@@ -1,0 +1,69 @@
+﻿1、创建仓库：
+	cd path
+	git init
+	
+2、提交文件：
+	vi readme.txt
+	git add readme.txt
+	git commit -m "add a new file"
+	
+3、修改仓库中的文件：
+	git status
+	git diff // 比对工作区与暂存区
+	git diff head [-- readme.txt] // 对比工作区与分支
+	git add readme.txt
+	git commit -m "add distributed word"
+	git status
+	
+4、版本回退
+	git log [--pretty=oneline]
+	git reset --hard HEAD^
+	git log	
+	git reflog // 执行命令显示
+	注意：HEAD: 表示当前版本
+	      HEAD^: 上一个版本
+	      HEAD^^：上上一个版本
+	      HEAD~100: 往上100个版本
+	      
+5、概念介绍：
+	工作区：电脑中的实体目录
+	版本库：.git
+	暂存区：.git/stage
+	分支：master
+
+6、git add: 从工作区添加到暂存区
+7、git commit: 从暂存区提交到当前分支
+
+8、撤销工作区修改：
+	git checkout -- readme.txt
+	
+9、撤销暂存区修改：
+	git reset HEAD readme.txt
+	
+10、查看暂存区文件：
+	git ls-files
+
+11、删除文件：
+	只删除本地：
+		rm test.txt // 删除本地
+		git checkout -- test.txt // 恢复到本地
+		
+	删除本地和暂存区：
+		git rm test.txt // 删除本地和暂存区
+		git reset head test.txt // 恢复到暂存区
+		git checkout -- test.txt // 恢复到本地
+		
+	删除本地和暂存区且提交：
+		git rm test.txt // 删除本地和暂存区
+		git commit -m 'delete file' // 提交到版本库
+		git checkout id test.txt // 恢复指定版本到工作空间和暂存区
+		
+		git reset --hard id // 将所有文件恢复到指定版本
+		git rm --cache test.txt // 删除暂存区
+	
+12、修改文件名
+	git mv old new // 修改工作空间和暂存区文件名称
+	git commit -m 'rename old to new' // 提交
+		
+	
+	
