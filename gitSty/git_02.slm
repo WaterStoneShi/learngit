@@ -42,3 +42,28 @@
 		创建+切换分支：git checkout -b <name>
 		合并某分支到当前分支：git merge <name>
 		删除分支：git branch -d <name>
+		
+5、冲突
+	$ git merge feature1
+	Auto-merging readme.txt
+	CONFLICT (content): Merge conflict in readme.txt
+	Automatic merge failed; fix conflicts and then commit the result.
+	
+	git status 中也可以查看到冲突
+	
+	1)手动修复冲突
+	2)git add
+	3)git commit
+	
+	查看分支合并日志：git log --graph --pretty=oneline --abbrev-commit
+									  git log --graph
+
+6、分支策略
+	master: 生产发布分支
+	dev: 开发分支
+	
+	1）fast forward模式【默认】：合并的时候不会产生commit,会忽略掉合并信息
+		 git merge dev
+	2）no fast forwar模式：
+		 git merge --no-ff -m 'merger dev with no-ff by master' dev
+
