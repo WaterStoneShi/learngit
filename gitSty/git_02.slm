@@ -4,11 +4,41 @@
 	公钥：id_rsa.pub
 	将公钥内容添加到远程仓库中（如：github)
 	
-2、连接远程仓库
+2、关联远程仓库（先有本地库，后有远程库）
 	1）如果本地没有仓库需要先初始化一个仓库：git init
 	2）连接远程仓库：git remote add origin https://github.com/WaterStoneShi/learngit.git
-								【git remote add origin git@server-name:path/repo-name.git】
+								【或者 git remote add origin git@sgithub.com:WaterStoneShi/learngit.git】
 	3）第一次推送master分支的所有内容：git push -u origin master
 	4）后续推送最新修改：git push origin master
 
-3、克隆远程仓库
+3、克隆远程仓库（先有远程库，没有本地库）
+			git clone git@github.com:WaterStoneShi/gitskills.git
+	或者git clone  https://github.com/WaterStoneShi/gitskills.git
+	
+注意：使用https除了速度慢以外，还有个最大的麻烦是每次推送都必须输入口令，
+      但是在某些只开放http端口的公司内部就无法使用ssh协议而只能用https
+
+4、分支      
+  创建分支
+	 1）创建分支：
+	 	git branch dev
+	 2）切换分支：
+	 	git checkout dev
+	 3）创建并切换[等同于上面两条命令]:
+	 	 git checkout -b dev
+	 4）查看分支[*表示当前分支]：
+	 	git branch
+	 	
+  合并分支
+		1）合并指定分支到当前分支：git merge dev
+	 	
+  删除分支
+		1）删除指定分支：git branch -d dev
+	
+	小结:
+		查看分支：git branch
+		创建分支：git branch <name>
+		切换分支：git checkout <name>
+		创建+切换分支：git checkout -b <name>
+		合并某分支到当前分支：git merge <name>
+		删除分支：git branch -d <name>
