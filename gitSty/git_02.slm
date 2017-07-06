@@ -1,0 +1,14 @@
+1、远程仓库
+	生成密钥串： ssh-keygen -t rsa -C "waterstone.shi@outlook.com"
+	私钥：id_rsa
+	公钥：id_rsa.pub
+	将公钥内容添加到远程仓库中（如：github)
+	
+2、连接远程仓库
+	1）如果本地没有仓库需要先初始化一个仓库：git init
+	2）连接远程仓库：git remote add origin https://github.com/WaterStoneShi/learngit.git
+								【git remote add origin git@server-name:path/repo-name.git】
+	3）第一次推送master分支的所有内容：git push -u origin master
+	4）后续推送最新修改：git push origin master
+
+3、克隆远程仓库
