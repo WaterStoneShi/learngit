@@ -28,7 +28,7 @@
 5、概念介绍：
 	工作区：电脑中的实体目录
 	版本库：.git
-	暂存区：.git/stage
+	暂存区：.git/index
 	分支：master
 
 6、git add: 从工作区添加到暂存区
