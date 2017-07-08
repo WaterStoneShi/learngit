@@ -1,0 +1,26 @@
+﻿1、多人协作
+	1）git remote -v：查看远程仓库信息
+	
+	推送分支：
+	git push origin master：指定本地分支，Git就会把该分支推送到远程库对应的远程分支上
+	git push origin dev：如远程没有dev分支，则自动创建
+	
+	抓取分支：
+	git checkout -b dev origin/dev：创建本地分支，并与指定远程分支对应
+	git branch --set-upstream dev origin/dev：设置dev和origin/dev的链接【此命令快被移除】
+	git branch --set-upstream-to=origin/dev dev：设置dev和origin/dev的链接
+   
+	git pull：抓取远程仓库最新内容到本地【如果git pull提示“no tracking information”，则说明本地分支和远程分支的链接关系没有创建】
+	
+	注意：
+	<1> 远程仓库的默认名称是origin,Git自动把本地的master分支和远程的master分支对应起来
+	
+2、标签：版本库的快照
+	git tag v1.0：创建标签【默认在最新的commit】
+	git tag v0.9 6224937：在指定commit上创建标签
+	git tag -a v0.1 -m "version 0.1 released" 3628164：创建带有说明的标签，用-a指定标签名，-m指定说明文字
+	git tag：查看标签列表【根据字母排序】
+	git show v1.0：查看指定标签信息
+	git tag -d v1.0：删除指定标签
+	
+	
