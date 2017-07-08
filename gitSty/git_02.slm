@@ -33,7 +33,8 @@
 		1）合并指定分支到当前分支：git merge dev
 	 	
   删除分支
-		1）删除指定分支：git branch -d dev
+		1）删除指定分支[此分支的内容需合并]：git branch -d dev 
+		2）强制删除：git branch -D <name>
 	
 	小结:
 		查看分支：git branch
@@ -67,3 +68,9 @@
 	2）no fast forwar模式：
 		 git merge --no-ff -m 'merger dev with no-ff by master' dev
 
+7、Bug分支
+	git stash ：临时保存修改状态
+	git stash list：查看临时保存栈
+	git stash apply [stash@{0}]: 恢复栈顶状态 【或者指定待恢复状态】 此操作不会删除stash栈中信息
+	git stash drop  [stash@{0}]: 删除stash栈中信息
+	git stash pop  [stash@{0}]: 恢复并删除栈顶信息
