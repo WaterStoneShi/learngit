@@ -11,6 +11,7 @@
 	git status
 	git diff // 比对工作区与暂存区
 	git diff head [-- readme.txt] // 对比工作区与分支
+	git diff --cached
 	git add readme.txt
 	git commit -m "add distributed word"
 	git status
