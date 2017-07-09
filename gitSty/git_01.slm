@@ -60,7 +60,7 @@
 		git checkout id test.txt // 恢复指定版本到工作空间和暂存区
 		
 		git reset --hard id // 将所有文件恢复到指定版本
-		git rm --cache test.txt // 删除暂存区
+		git rm --cached test.txt // 删除暂存区
 	
 12、修改文件名
 	git mv old new // 修改工作空间和暂存区文件名称
